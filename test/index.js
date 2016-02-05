@@ -31,14 +31,11 @@ describe('Template', function(){
         .on('error', done)
         .on('end', function(doc){
           var estimatedSize = 11694
-            , sink = new Sink(doc);
-          doc.finalize(function (err, bytes) {
-            if (err) done(err);
-            bytes.should.equal(estimatedSize);
-          });
-          sink.on('end', done);
+          doc.finalize()
+					done();
         })
-        .apply(require('../examples/values.js'));
+        .apply(require('../examples/values.js'))
+        ;
     });
     it('should apply the given values to the template using a stream', function(done){
       var path = join(__dirname, '../examples/test-template.ott')
@@ -47,15 +44,10 @@ describe('Template', function(){
         .template(stream)
         .on('error', done)
         .on('end', function(doc){
-          var estimatedSize = 11694
-            , sink = new Sink(doc);
-          doc.finalize(function (err, bytes) {
-            if (err) done(err);
-            bytes.should.equal(estimatedSize);
-          });
-          sink.on('end', done);
+           doc.finalize();
+           done();
         })
-        .apply(require('../examples/values.js'));
+        .apply(require('../examples/values.js'))
     });
   });
   describe('table-handler', function(){
@@ -69,12 +61,9 @@ describe('Template', function(){
       odt
         .template(join(__dirname, '../examples/table.ott'))
         .on('error', done)
-        .on('finalized', function(bytes){
-          bytes.should.equal(estimatedSize);
-        })
         .on('end', function(doc){
-          var sink = new Sink(doc);
-          sink.on('end', done);
+          doc.finalize();
+          done()
         })
         .apply( table(require('../examples/table')) );
     });

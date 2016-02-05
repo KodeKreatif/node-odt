@@ -1,7 +1,7 @@
 {
-  "name": "odt",
-  "version": "1.1.1",
-  "description": "A node tool to work with OpenDocument text files.",
+  "name": "odt-new-archiver",
+  "version": "0.0.1",
+  "description": "A node tool to work with OpenDocument text files. Forked from 'node-odt' but with new API of archiver",
   "main": "index.js",
   "bin": {
     "node-odt": "bin/node-odt"
@@ -25,7 +25,7 @@
     "pipette": "~0.9.3",
     "async": "~0.2.9",
     "adm-zip": "~0.4.3",
-    "archiver": "~0.4.3",
+    "archiver": "~0.21.0",
     "colors": "~0.6.0-1",
     "merge": "~1.1.1",
     "xmldom": "~0.1.16"
