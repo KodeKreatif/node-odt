@@ -25,7 +25,7 @@
     "pipette": "~0.9.3",
     "async": "~0.2.9",
     "adm-zip": "~0.4.3",
-    "archiver": "~0.21.0",
+    "archiver": "git://github.com/KodeKreatif/node-archiver",
     "colors": "~0.6.0-1",
     "merge": "~1.1.1",
     "xmldom": "~0.1.16"
